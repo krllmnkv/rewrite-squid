@@ -38,8 +38,8 @@ def rewrite(url):
 
 while True:
 	stream = sys.stdin.readline().strip()
-	streamToList = stream.split(' ')
-	url = streamToList[0]
+	stream_to_list = stream.split(' ')
+	url = stream_to_list[0]
 	stream_out = rewrite(url)
 	sys.stdout.write(stream_out)
 	sys.stdout.flush()
