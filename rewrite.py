@@ -6,8 +6,8 @@ import json
 
 def correction_url(correct_url):
     if correct_url[0:7] == 'http://':
-            if correct_url[7:10] != 'www':
-                correct_url = 'http://' + correct_url[10:]
+        if correct_url[7:10] != 'www':
+            correct_url = 'http://' + correct_url[10:]
     else:
         if correct_url[0:3] == 'www':
             correct_url = 'http://' + correct_url
@@ -16,8 +16,8 @@ def correction_url(correct_url):
     return correct_url
 
 def rewrite(url):
-    with open('/etc/squid3/url.json') as jd:
-    data = jd.read()
+    with open('/home/krllmnkv/Desktop/url_re/url.json') as jd:
+        data = jd.read()
         jsondata = json.loads(data)
     final_url = '\n'
     check_edit_url = False
@@ -30,8 +30,8 @@ def rewrite(url):
             final_url = second_url + final_url
             check_edit_url = True
             break
-    if check_edit_url == True:
-        syslog.syslog(6, 'Requested URL : ' + url + ' redirect to : ' + second_url)
+    if check_edit_url is True:
+        syslog.syslog(6, 'Requested : ' + url + ' redirect to : ' + second_url)
     else:
         syslog.syslog(6, 'Requested URL : ' + url)
     return final_url
