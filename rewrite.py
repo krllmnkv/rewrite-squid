@@ -16,7 +16,7 @@ def correction_url(correct_url):
     return correct_url
 
 def rewrite(url):
-    with open('/home/krllmnkv/Desktop/url_re/url.json') as jd:
+    with open('/etc/squid3/url.json') as jd:
         data = jd.read()
         jsondata = json.loads(data)
     final_url = '\n'
