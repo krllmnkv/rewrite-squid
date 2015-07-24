@@ -4,7 +4,7 @@ import sys
 import syslog
 import json
 
-def correct_url(correct_url):
+def correction_url(correct_url):
 	if correct_url[0:7] == 'http://':
 			if correct_url[7:10] != 'www':
 				correct_url = 'http://' + correct_url[10:]
@@ -23,9 +23,9 @@ def rewrite(url):
 	check_edit_url = False
 	for line in jsondata['url']:
 		first_url = line['from']
-		first_url = correct_url(first_url)
+		first_url = correction_url(first_url)
 		second_url = line['to']
-		second_url = correct_url(second_url)
+		second_url = correction_url(second_url)
 
 		if url.startswith(first_url):
 			final_url = second_url + final_url
