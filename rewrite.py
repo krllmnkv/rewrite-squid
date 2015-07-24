@@ -26,12 +26,10 @@ def rewrite(url):
 		first_url = correction_url(first_url)
 		second_url = line['to']
 		second_url = correction_url(second_url)
-
 		if url.startswith(first_url):
 			final_url = second_url + final_url
 			check_edit_url = True
-			break	
-
+			break
 	if check_edit_url == True:
 		syslog.syslog(6, 'Requested URL : ' + url + ' redirect to : ' + second_url)
 	else:
