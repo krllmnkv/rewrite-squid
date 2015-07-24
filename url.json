@@ -1,0 +1,10 @@
+{"url":
+	[
+		{"from": "yandex.ru",
+		 "to": "google.com/"},
+		{"from": "http://www.lurkmore.to/",
+		 "to": "http://www.wikipedia.com/"},
+		{"from": "http://www.linux.org.ru/",
+		 "to": "http://www.kernel.org/"}
+	]
+}
